@@ -1,0 +1,71 @@
+These notes were taken while reading and coding along with guides on 
+  https://www.hackerearth.com/practice/algorithms/sorting
+
+Index:
+      )Bubble Sort
+      )Selection Sort
+      )Insertions Sort
+      )Merge Sort
+      )Quick Sort
+      )Radix Sort
+      )Heap Sort
+      )Bucket Sort
+
+
+
+)Bubble Sort
+    Bubble sort is the idea of repeatedly comparing pairs of adjacent elements and swapping 
+    their positions if the exist in the wrong order.
+
+    If we assume array A[] is an unsorted array of 'n' elements, the pseudo-code is as follows:
+
+      void bubble_sort(int A[], int n) {
+        int tmp;
+        for(int k = 0; k < n-1; k++) {
+
+                              /* 'n-k-1' being used to ignore comparisons from previous iterations 
+                                int k is used to count and 'n-k-1' is used to stop from making a
+                                comparison of that last item, as we can assume the last two items 
+                                were properly swapped during either the last or initial iteration 
+                              
+                              
+                              */
+          for(int i = 0; i < n-k-1; i++) {
+            if(A[ i ] > A[ i+1 ]) {
+              tmp = A[ i ];
+              a[ i ] = A[ i+1 ];
+              a[ i+1 ] = temp
+            }
+          }
+        }
+      }
+
+    Given an array [7, 4, 5, 2]:
+
+          7 and 4 are swapped       7 and 5 are swapped       7 and 2 are swapped
+                /  \                        /  \                         /  \
+      Step 1 - [7, 4, 5, 2]     =>      [4, 7, 5, 2]      =>      [4, 5, 7, 2]      =>      [4, 5, 2, 7]
+
+
+              No swap                5 and 2 are swapped 
+                /  \                        /  \  
+      Step 2 - [4, 5, 2, 7]     =>      [4, 5, 2, 7]      =>                        =>      [4, 2, 5, 7]
+
+
+          2 and 4 are swapped 
+                /  \ 
+      Step 3 - [4, 2, 5, 7]     =>                        =>                        =>      [2, 4, 5, 7]
+
+
+  The complexity of bubble-sort method is O(n**2) in both worst and average cases, because the entire
+       array needs to be iterated for for every element.
+
+
+)Selection Sort
+)Insertions Sort
+)Merge Sort
+)Quick Sort
+)Radix Sort
+)Heap Sort
+)Bucket Sort
+
