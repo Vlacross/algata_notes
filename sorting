@@ -57,11 +57,50 @@ Index:
       Step 3 - [4, 2, 5, 7]     =>                        =>                        =>      [2, 4, 5, 7]
 
 
-  The complexity of bubble-sort method is O(n**2) in both worst and average cases, because the entire
+  *Time Complexity of bubble-sort method is O(n**2) in both worst and average cases, because the entire
        array needs to be iterated for for every element.
 
 
 )Selection Sort
+    Selection sort method iterates through the array with a single nested for-loop. For each index, it 
+    iterates through the array, finds the minimum value and swaps it into the current index/slot.
+
+    Ex:
+      void selection_sort(int A[ ], int n) {
+        int minimum, tmp;
+
+        for(int i = 0; i < n-1; i++) {
+          minimum = i;
+
+          for(int j = i+1; j < n; j++) {
+            in(A[ j ] < A[ minimum ]) {
+              minimum = j;
+            }
+          }
+
+          tmp = A[ i ];
+          A[ i ] = A[ minimum ];
+          A[ minimum ] = tmp;
+        }
+      }
+
+    Given an array [7, 5, 4, 2]:
+
+          7 and 2 are swapped
+                /       \            sorted       unsorted
+      Step 1 - [7, 5, 4, 2]     =>      [2]       [5, 4, 7]
+
+          5 and 4 are swapped  
+                   / \               sorted       unsorted
+      Step 2 - [2, 5, 4, 7]     =>      [2, 4]     [5, 7]
+      
+          No swap needed
+                      / \            sorted       unsorted
+      Step 3 - [2, 4, 5, 7]     =>      [2, 4, 5]    [7]     =>      [2, 4, 5, 7]
+
+    *Time Complexity of selection sort is O(n**2)
+
+
 )Insertions Sort
 )Merge Sort
 )Quick Sort
