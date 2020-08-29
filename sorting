@@ -15,7 +15,7 @@ Index:
 
 )Bubble Sort
     Bubble sort is the idea of repeatedly comparing pairs of adjacent elements and swapping 
-    their positions if the exist in the wrong order.
+    their positions if they exist in the wrong order.
 
     If we assume array A[] is an unsorted array of 'n' elements, the pseudo-code is as follows:
 
@@ -25,7 +25,7 @@ Index:
 
                               /* 'n-k-1' being used to ignore comparisons from previous iterations 
                                 int k is used to count and 'n-k-1' is used to stop from making a
-                                comparison of that last item, as we can assume the last two items 
+                                comparison of that last items, as we can assume the last two items 
                                 were properly swapped during either the last or initial iteration 
                               
                               
@@ -73,7 +73,7 @@ Index:
           minimum = i;
 
           for(int j = i+1; j < n; j++) {
-            in(A[ j ] < A[ minimum ]) {
+            if(A[ j ] < A[ minimum ]) {
               minimum = j;
             }
           }
