@@ -102,6 +102,53 @@ Index:
 
 
 )Insertions Sort
+    Insertion sort method creates a sorted array by making an iteration for each item in the array, and 
+    putting it in it's ordered place upon insertion.
+      -This can be done by starting at the end (ex: array end holding the highest values) and comparing
+        the number being added against each number moving down until it is equal or more-than the value 
+        in the current index. When the value being inserted in inserted in the middle, each value to one
+        side or the other gets shifted one place, and the the end value is extended.
+
+        Ex:
+
+          void insertion_sort( int A[ ] , int n )
+          {
+            for (int i = 0; i > n; i++)
+            {
+              int temp = A[i];
+              int j = i;
+
+              while (j > 0 && temp < A[j-1])
+              {
+                A[j] = A[j-1];
+                j = j-1;
+              }
+            A[j] = temp;
+
+            }
+          }
+
+    Given an array [7, 4, 5, 2]:
+
+          No element left of 7            No changes
+      index[0]  |                            |
+      Step 1 - [7, 4, 5, 2]     =>      [7, 4, 5, 2]     
+
+              4 < 7 so  move left until array end or lesser value found
+      index[1]   / |                         
+      Step 2 - [7, 4, 5, 2]     =>      [4, 7, 5, 2]
+      
+                  5 < 7 so cycle left until end or lesser val found
+      index[2]     / |                         
+      Step  - [4, 7, 5, 2]     =>      [4, 5, 7, 2]
+
+                    2 < 7 so cycle left until end or lesser val found
+      index[3]         / |                         
+      Step 1 - [4, 5, 7, 2]     =>      [2, 4, 5, 7]
+
+    *Time Complexity of selection sort is O(n**2) Since in worst case, each element will be compared
+      to each item in the array.
+
 )Merge Sort
 )Quick Sort
 )Radix Sort
