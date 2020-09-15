@@ -100,7 +100,7 @@ Index:
 
     *Time Complexity of selection sort is O(n**2)
 
-
+namd 
 )Insertions Sort
     Insertion sort method creates a sorted array by making an iteration for each item in the array, and 
     putting it in it's ordered place upon insertion.
@@ -150,6 +150,50 @@ Index:
       to each item in the array.
 
 )Merge Sort
+  Merge Sort Method is a divide-and-conquer algorithm that breaks down a list into smaller and smaller chunks
+   until each consists of a single value, and then combining/merging each of those so that they are assembled
+   into a sorted list.
+
+  Ex:
+    void merge(int A[ ], int start, int mid, int end) {
+      int p = start, q = mid+1;
+
+      int Arr[end-start+1], k=0;
+
+      for(int i = start; i <= end; i++) {
+        if(p > mid) {
+          Arr[ k++ ] = A[ q++ ];
+        }
+        else if (q > end) {
+          Arr[ k++ ] = A[ p++ ];
+        }
+        else if(A[ p ] < A[ q ]) {
+          Arr[ k++ ] = A[ p++ ];
+        }
+        else {
+          Arr[ k++ ] = A[ q++ ];
+        }
+      }
+      for (int p=0; p < k; p++) {
+        A[ start++ ] = Arr[ p ];
+      }
+    }
+
+  An Example using recursive options along with the above merge function:
+
+    void merge_sort(int A[ ], int start, int end) 
+    {
+      if(start < end) {
+        int mig = (start+end)/2;
+        merge_sort(A, start, mid);
+        merge_sort(A, mid+1, end);
+
+        merge(A, start, mid, end);
+      }
+    }
+  * Time complexity:
+    The list of size N is divided into a max of logN parts,  and merging all sublists into a single list take O(N) 
+    time. The worst case run time of this algo is O(NLogN)
 )Quick Sort
 )Radix Sort
 )Heap Sort
